@@ -11,20 +11,18 @@ namespace Calc_Console
         static void Main(string[] args)
         {
             Console.WriteLine("===============계산기====================");
-            Console.WriteLine("난이도: 1. 상 \t 2. 중 \t 3. 하");
+            Console.WriteLine("난이도: 1. 상 \t 2. 중 \t 3. 하 \t 4. 종료");
             Console.WriteLine("=========================================");
 
-            while (true)
+            int choice = int.Parse(Console.ReadLine());
+            Operator oper = new Operator();
+
+            switch (choice)
             {
-                Random rNum = new Random();
-                rNum.Next(10, 101);
-                Random rOper = new Random();
-                rOper.Next(1, 5); // 1= '+' , 2= '-', 3= '*', 4= '/'
-
-                Console.Write($"{rNum} {rOper} {rNum} =");
-                int result = int.Parse(Console.ReadLine());
-
-
+                case 1: oper.calcul(); break;
+                case 2: break;
+                case 3: break;
+                case 4: Console.WriteLine("프로그램을 종료합니다."); return;
             }
         }
     }
