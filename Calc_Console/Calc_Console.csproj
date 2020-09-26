@@ -43,12 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Division.cs" />
     <Compile Include="Logic.cs" />
-    <Compile Include="Minus.cs" />
-    <Compile Include="Multip.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="Plus.cs" />
+    <Compile Include="Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

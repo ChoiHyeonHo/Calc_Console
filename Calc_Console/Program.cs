@@ -10,22 +10,22 @@ namespace Calc_Console
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                Console.WriteLine("===============계산기====================");
-                Console.WriteLine("난이도: 1. 상 \t 2. 중 \t 3. 하 \t 4. 종료");
-                Console.WriteLine("=========================================");
+            Level lv = new Level();
+            bool bFlag = true;
 
-                int choice = int.Parse(Console.ReadLine());
-                Level level = new Level();
+            while (bFlag == true)
+            {
+                lv.ShowMenu(); 
+                int choice = int.Parse(Console.ReadLine().Trim().Replace("", " "));
 
                 switch (choice)
                 {
-                    case 1: level.HighLevel(); break;
-                    case 2: level.MiddleLevel(); break;
-                    case 3: level.LowLevel(); break;
+                    case 1: lv.HighLevel(); break;
+                    case 2: lv.MiddleLevel(); break;
+                    case 3: lv.LowLevel(); break;
                     case 4: Console.WriteLine("프로그램을 종료합니다."); return;
                 }
+                bFlag = false;
             }
         }
     }

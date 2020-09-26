@@ -8,7 +8,13 @@ namespace Calc_Console
 {
     class Level
     {
-        bool bFlag = true;
+        public void ShowMenu()
+        {
+            Console.WriteLine("===============계산기====================");
+            Console.WriteLine("난이도: 1. 상 \t 2. 중 \t 3. 하 \t 4. 종료");
+            Console.WriteLine("=========================================");
+        }
+
         public void HighLevel()
         {
             Logic logic = new Logic();
@@ -23,17 +29,16 @@ namespace Calc_Console
                 if ((win / (win + lose) * 100) >= 80)
                 {
                     Console.WriteLine("난이도를 다시 설정하시겠습니까? (1. 예\t2. 아니오)");
-                    int difficulty = int.Parse(Console.ReadLine());
+                    int difficulty = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                     if (difficulty == 1)
                     {
                         Console.WriteLine("난이도를 다시 설정합니다.");
-                        bFlag = false;
                         break;
                     }
                     else if(difficulty == 2)
                     {
                         Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
-                        int reTry = int.Parse(Console.ReadLine());
+                        int reTry = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                         if (reTry == 1)
                         {
                             continue;
@@ -41,7 +46,7 @@ namespace Calc_Console
                         else if (reTry == 2)
                         {
                             Console.WriteLine("프로그램을 종료합니다.");
-                            return;
+                            break;
                         }
                     }
                 }
@@ -61,17 +66,16 @@ namespace Calc_Console
                 if (win >= 4)
                 {
                     Console.WriteLine("난이도를 다시 설정하시겠습니까? (1. 예\t2. 아니오)");
-                    int difficulty = int.Parse(Console.ReadLine());
+                    int difficulty = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                     if (difficulty == 1)
                     {
                         Console.WriteLine("난이도를 다시 설정합니다.");
-                        bFlag = false;
                         break;
                     }
                     else if (difficulty == 2)
                     {
                         Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
-                        int reTry = int.Parse(Console.ReadLine());
+                        int reTry = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                         if (reTry == 1)
                         {
                             continue;
@@ -99,17 +103,16 @@ namespace Calc_Console
                 if (win >= 4)
                 {
                     Console.WriteLine("난이도를 다시 설정하시겠습니까? (1. 예\t2. 아니오)");
-                    int difficulty = int.Parse(Console.ReadLine());
+                    int difficulty = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                     if (difficulty == 1)
                     {
                         Console.WriteLine("난이도를 다시 설정합니다.");
-                        bFlag = false;
                         break;
                     }
                     else if (difficulty == 2)
                     {
                         Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
-                        int reTry = int.Parse(Console.ReadLine());
+                        int reTry = int.Parse(Console.ReadLine().Trim().Replace("", " "));
                         if (reTry == 1)
                         {
                             continue;

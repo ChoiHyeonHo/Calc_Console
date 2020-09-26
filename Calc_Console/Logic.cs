@@ -53,12 +53,12 @@ namespace Calc_Console
                 CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
             }
         }
-        public void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum, out int result)
+        /*public void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum, out int result)
         {
             if (symbol == 1)
             {
-                Plus plus = new Plus();
-                plus.PlusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+                Operator oper = new Operator();
+                oper.PlusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
             }
             else if (symbol == 2)
             {
@@ -75,6 +75,6 @@ namespace Calc_Console
                 Multip multip = new Multip();
                 multip.MultipM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
             }
-        }
+        }*/
     }
 }
