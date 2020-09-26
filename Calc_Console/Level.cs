@@ -118,7 +118,7 @@ namespace Calc_Console
                 {
                     if ((win / (win + lose) * 100) >= 80)
                     {
-                        Console.WriteLine("난이도를 다시 설정하시겠습니까? (1. 예\t2. 아니오)");
+                        Console.WriteLine("난이도를 다시 설정하시겠습니까? (1. 예\t2. 아니오\t3. 종료)");
                         int difficulty = int.Parse(Console.ReadLine());
                         if (difficulty == 1)
                         {
@@ -127,17 +127,27 @@ namespace Calc_Console
                         }
                         else if (difficulty == 2)
                         {
-                            Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
-                            int reTry = int.Parse(Console.ReadLine());
-                            if (reTry == 1)
-                            {
-                                continue;
-                            }
-                            else if (reTry == 2)
-                            {
-                                Console.WriteLine("처음 메뉴로 돌아갑니다.");
-                                break;
-                            }
+                            Console.WriteLine("다시 시작합니다.");
+                            continue;
+                        }
+                        else if(difficulty == 3)
+                        {
+                            Console.WriteLine("처음 메뉴로 돌아갑니다.");
+                            break;
+                        }
+                    }
+                    else if((win / (win + lose) * 100) <= 80)
+                    {
+                        Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
+                        int reTry = int.Parse(Console.ReadLine());
+                        if (reTry == 1)
+                        {
+                            continue;
+                        }
+                        else if (reTry == 2)
+                        {
+                            Console.WriteLine("처음 메뉴로 돌아갑니다.");
+                            break;
                         }
                     }
                 }
@@ -145,6 +155,17 @@ namespace Calc_Console
                 {
                     throw;
                 }
+                //Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
+                //int reTry = int.Parse(Console.ReadLine());
+                //if (reTry == 1)
+                //{
+                //    continue;
+                //}
+                //else if (reTry == 2)
+                //{
+                //    Console.WriteLine("처음 메뉴로 돌아갑니다.");
+                //    break;
+                //}
             }
         }
     }

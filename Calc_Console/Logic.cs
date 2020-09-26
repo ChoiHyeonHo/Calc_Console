@@ -9,16 +9,16 @@ namespace Calc_Console
     class Logic
     {
         Calc calc = new Calc();
-        private void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum, out int result)
+        private void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum)
         {
             if (symbol == 1)
-                calc.PlusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+                calc.PlusM(ref win, ref lose, out oper, alphaNum, betaNum);
             else if (symbol == 2)
-                calc.MinusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+                calc.MinusM(ref win, ref lose, out oper, alphaNum, betaNum);
             else if (symbol == 3)
-                calc.DivisionM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+                calc.DivisionM(ref win, ref lose, out oper, alphaNum, betaNum);
             else
-                calc.MultipM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+                calc.MultipM(ref win, ref lose, out oper, alphaNum, betaNum);
         }
         public void LLevelLogic(ref float win, ref float lose)
         {
@@ -31,8 +31,7 @@ namespace Calc_Console
                 int symbol = oNum.Next(1, 5);
                 int alphaNum = rNum.Next(1, 10);
                 int betaNum = rNum.Next(1, 10);
-                int result;
-                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
+                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum);
 
             }
         }
@@ -47,8 +46,7 @@ namespace Calc_Console
                 int symbol = oNum.Next(1, 5);
                 int alphaNum = rNum.Next(10, 100);
                 int betaNum = rNum.Next(10, 100);
-                int result;
-                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
+                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum);
             }
         }
         public void HLevelLogic(ref float win, ref float lose)
@@ -62,8 +60,7 @@ namespace Calc_Console
                 int symbol = oNum.Next(1, 5);
                 int alphaNum = rNum.Next(100, 999);
                 int betaNum = rNum.Next(100, 999);
-                int result;
-                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
+                CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum);
             }
         }
     }

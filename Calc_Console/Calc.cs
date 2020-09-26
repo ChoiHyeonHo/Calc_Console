@@ -8,102 +8,176 @@ namespace Calc_Console
 {
     public class Calc
     {
-        public void PlusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum, out int result)
+        public void PlusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
         {
             oper = "+";
+            int result;
+            int cnt = 1;
+            bool cFlag = true;
+            bool dFlag = true;
             Console.Write($"{alphaNum} {oper} {betaNum} =\t");
+
             try
             {
-                result = int.Parse(Console.ReadLine());
-            }
-            catch
-            {
-                throw;
-            }
-            while (true)
-            {
-                if ((alphaNum + betaNum) == result)
+                while (cFlag == true)
                 {
-                    Console.WriteLine("정답입니다.");
-                    win++;
-                    break;
+                    result = int.Parse(Console.ReadLine());
+                    if ((alphaNum + betaNum) == result && cFlag == true && dFlag == true)
+                    {
+                        Console.WriteLine("정답입니다.");
+                        win++;
+                        break;
+                    }
+                    else if ((alphaNum + betaNum) == result && cFlag == true && dFlag == false)
+                    {
+                        Console.Write($"{cnt}회 시도.");
+                        Console.WriteLine("정답입니다.");
+                        lose++;
+                        break;
+                    }
+                    else if ((alphaNum + betaNum) != result)
+                    {
+                        Console.WriteLine("오답입니다. 다시 입력해 주세요.");
+                        cFlag = true;
+                        dFlag = false;
+                        cnt++;
+                        continue;
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("오답입니다.");
-                    lose++;
-                    break;
-                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("숫자, 또는 연산자+숫자로 입력해 주세요");
+                Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
-        public void MinusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum, out int result)
+        public void MinusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
         {
             oper = "-";
+            int result;
+            int cnt = 1;
+            bool cFlag = true;
+            bool dFlag = true;
             Console.Write($"{alphaNum} {oper} {betaNum} =\t");
             try
             {
-                result = int.Parse(Console.ReadLine());
+                while (cFlag == true)
+                {
+                    result = int.Parse(Console.ReadLine());
+                    if ((alphaNum - betaNum) == result && cFlag == true && dFlag == true)
+                    {
+                        Console.WriteLine("정답입니다.");
+                        win++;
+                        break;
+                    }
+                    else if ((alphaNum - betaNum) == result && cFlag == true && dFlag == false)
+                    {
+                        Console.Write($"{cnt}회 시도.");
+                        Console.WriteLine("정답입니다.");
+                        lose++;
+                        break;
+                    }
+                    else if ((alphaNum - betaNum) != result)
+                    {
+                        Console.WriteLine("오답입니다. 다시 입력해 주세요.");
+                        cFlag = true;
+                        dFlag = false;
+                        cnt++;
+                        continue;
+                    }
+                }
             }
-            catch
+            catch(Exception)
             {
-                throw;
-            }
-            if ((alphaNum - betaNum) == result)
-            {
-                Console.WriteLine("정답입니다.");
-                win++;
-            }
-            else
-            {
-                Console.WriteLine("오답입니다.");
-                lose++;
+                Console.WriteLine("숫자, 또는 연산자+숫자로 입력해 주세요");
+                Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
-        public void MultipM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum, out int result)
+        public void MultipM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
         {
             oper = "*";
-            Console.Write($"{alphaNum} {oper} {betaNum} =\t"); 
-            try
-            {
-                result = int.Parse(Console.ReadLine());
-            }
-            catch
-            {
-                throw;
-            }
-            if ((alphaNum * betaNum) == result)
-            {
-                Console.WriteLine("정답입니다.");
-                win++;
-            }
-            else
-            {
-                Console.WriteLine("오답입니다.");
-                lose++;
-            }
-        }
-        public void DivisionM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum, out int result)
-        {
-            oper = "/";
+            int result;
+            int cnt = 1;
+            bool cFlag = true;
+            bool dFlag = true;
             Console.Write($"{alphaNum} {oper} {betaNum} =\t");
             try
             {
-                result = int.Parse(Console.ReadLine());
+                while (cFlag == true)
+                {
+                    result = int.Parse(Console.ReadLine());
+                    if ((alphaNum * betaNum) == result && cFlag == true && dFlag == true)
+                    {
+                        Console.WriteLine("정답입니다.");
+                        win++;
+                        break;
+                    }
+                    else if ((alphaNum * betaNum) == result && cFlag == true && dFlag == false)
+                    {
+                        Console.Write($"{cnt}회 시도.");
+                        Console.WriteLine("정답입니다.");
+                        lose++;
+                        break;
+                    }
+                    else if((alphaNum * betaNum) != result)
+                    {
+                        Console.WriteLine("오답입니다. 다시 입력해 주세요.");
+                        cFlag = true;
+                        dFlag = false;
+                        cnt++;
+                        continue;
+                    }
+                }
             }
-            catch
+            catch (Exception)
             {
-                throw;
+                Console.WriteLine("숫자, 또는 연산자+숫자로 입력해 주세요");
+                Console.WriteLine("예시) 1 , 0 또는 -1");
             }
-            if ((alphaNum / betaNum) == result)
+        }
+        public void DivisionM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
+        {
+            oper = "/";
+            int result;
+            int cnt = 1;
+            bool cFlag = true;
+            bool dFlag = true;
+            Console.Write($"{alphaNum} {oper} {betaNum} =\t");
+            try
             {
-                Console.WriteLine("정답입니다.");
-                win++;
+                while (cFlag == true)
+                {
+                    result = int.Parse(Console.ReadLine());
+                    if ((alphaNum / betaNum) == result && cFlag == true && dFlag == true)
+                    {
+                        Console.WriteLine("정답입니다.");
+                        win++;
+                        break;
+                    }
+                    else if ((alphaNum / betaNum) == result && cFlag == true && dFlag == false)
+                    {
+                        Console.Write($"{cnt}회 시도.");
+                        Console.WriteLine("정답입니다.");
+                        lose++;
+                        break;
+                    }
+                    else if ((alphaNum / betaNum) != result)
+                    {
+                        Console.WriteLine("오답입니다. 다시 입력해 주세요.");
+                        cFlag = true;
+                        dFlag = false;
+                        cnt++;
+                        continue;
+                    }
+                }
             }
-            else
+            catch (Exception)
             {
-                Console.WriteLine("오답입니다.");
-                lose++;
+                Console.WriteLine("숫자, 또는 연산자+숫자로 입력해 주세요");
+                Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
     }
 }
+
+

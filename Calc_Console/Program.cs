@@ -11,13 +11,15 @@ namespace Calc_Console
         static void Main(string[] args)
         {
             Level lv = new Level();
-            try
+            
+            
+            while (true)
             {
-                while (true)
+                lv.ShowMenu();
+                int choice;
+                try
                 {
-                    lv.ShowMenu();
-                    int choice = int.Parse(Console.ReadLine());
-
+                    choice = int.Parse(Console.ReadLine());
                     switch (choice)
                     {
                         case 1: lv.HighLevel(); break;
@@ -26,10 +28,10 @@ namespace Calc_Console
                         case 4: Console.WriteLine("프로그램을 종료합니다."); return;
                     }
                 }
-            }
-            catch(Exception err)
-            {
-                throw new Exception(err.Message);
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message + "처음 화면으로 돌아갑니다.");
+                }
             }
         }
     }
