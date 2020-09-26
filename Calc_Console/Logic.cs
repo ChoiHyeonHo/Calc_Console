@@ -8,6 +8,18 @@ namespace Calc_Console
 {
     class Logic
     {
+        Calc calc = new Calc();
+        private void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum, out int result)
+        {
+            if (symbol == 1)
+                calc.PlusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+            else if (symbol == 2)
+                calc.MinusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+            else if (symbol == 3)
+                calc.DivisionM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+            else
+                calc.MultipM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
+        }
         public void LLevelLogic(ref float win, ref float lose)
         {
             for (int i = 0; i <= 4; i++)
@@ -21,6 +33,7 @@ namespace Calc_Console
                 int betaNum = rNum.Next(1, 10);
                 int result;
                 CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
+
             }
         }
         public void MLevelLogic(ref float win, ref float lose)
@@ -53,28 +66,6 @@ namespace Calc_Console
                 CommonM(ref win, ref lose, out oper, symbol, alphaNum, betaNum, out result);
             }
         }
-        /*public void CommonM(ref float win, ref float lose, out string oper, int symbol, int alphaNum, int betaNum, out int result)
-        {
-            if (symbol == 1)
-            {
-                Operator oper = new Operator();
-                oper.PlusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
-            }
-            else if (symbol == 2)
-            {
-                Minus minus = new Minus();
-                minus.MinusM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
-            }
-            else if (symbol == 3)
-            {
-                Division division = new Division();
-                division.DivisionM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
-            }
-            else
-            {
-                Multip multip = new Multip();
-                multip.MultipM(ref win, ref lose, out oper, alphaNum, betaNum, out result);
-            }
-        }*/
     }
 }
+

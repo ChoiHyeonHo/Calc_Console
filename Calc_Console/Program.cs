@@ -11,21 +11,25 @@ namespace Calc_Console
         static void Main(string[] args)
         {
             Level lv = new Level();
-            bool bFlag = true;
-
-            while (bFlag == true)
+            try
             {
-                lv.ShowMenu(); 
-                int choice = int.Parse(Console.ReadLine().Trim().Replace("", " "));
-
-                switch (choice)
+                while (true)
                 {
-                    case 1: lv.HighLevel(); break;
-                    case 2: lv.MiddleLevel(); break;
-                    case 3: lv.LowLevel(); break;
-                    case 4: Console.WriteLine("프로그램을 종료합니다."); return;
+                    lv.ShowMenu();
+                    int choice = int.Parse(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1: lv.HighLevel(); break;
+                        case 2: lv.MiddleLevel(); break;
+                        case 3: lv.LowLevel(); break;
+                        case 4: Console.WriteLine("프로그램을 종료합니다."); return;
+                    }
                 }
-                bFlag = false;
+            }
+            catch(Exception err)
+            {
+                throw new Exception(err.Message);
             }
         }
     }

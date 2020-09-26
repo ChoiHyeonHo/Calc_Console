@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Logic.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="Operator.cs" />
+    <Compile Include="Calc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
