@@ -43,7 +43,7 @@ namespace Calc_Console
                             }
                             else if (reTry == 2)
                             {
-                                Console.WriteLine("프로그램을 종료합니다.");
+                                Console.WriteLine("처음 메뉴로 돌아갑니다.");
                                 break;
                             }
                         }
@@ -88,7 +88,7 @@ namespace Calc_Console
                             }
                             else if (reTry == 2)
                             {
-                                Console.WriteLine("프로그램을 종료합니다.");
+                                Console.WriteLine("처음 메뉴로 돌아갑니다.");
                                 break;
                             }
                         }
