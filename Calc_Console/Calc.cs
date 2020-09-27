@@ -8,13 +8,13 @@ namespace Calc_Console
 {
     public class Calc
     {
-        public void PlusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
+        public void PlusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum) // 덧셈 메서드
         {
-            oper = "+";
+            oper = "+"; // 난수 1일경우 연산기호 + 설정
             int result;
-            int cnt = 1;
+            int cnt = 1; // 시도 수 카운트
             bool cFlag = true;
-            bool dFlag = true;
+            bool dFlag = true; //1회 시도후 오답일 경우 false 전환하여 else if문으로 갈 수 있도록
             Console.Write($"{alphaNum} {oper} {betaNum} =\t");
 
             try
@@ -51,9 +51,9 @@ namespace Calc_Console
                 Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
-        public void MinusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
+        public void MinusM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum) // 뺄셈 메서드
         {
-            oper = "-";
+            oper = "-"; //난수 2일 경우 연산기호 -
             int result;
             int cnt = 1;
             bool cFlag = true;
@@ -93,9 +93,9 @@ namespace Calc_Console
                 Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
-        public void MultipM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
+        public void MultipM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum) //곱셈 메서드
         {
-            oper = "*";
+            oper = "*"; //난수 1~4중 1,2,3을 제외한 나머지 경우 연산기호 *
             int result;
             int cnt = 1;
             bool cFlag = true;
@@ -135,9 +135,9 @@ namespace Calc_Console
                 Console.WriteLine("예시) 1 , 0 또는 -1");
             }
         }
-        public void DivisionM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum)
+        public void DivisionM(ref float win, ref float lose, out string oper, int alphaNum, int betaNum) //나눗셈 메서드
         {
-            oper = "/";
+            oper = "/"; //난수 3일 경우 연산기호 /
             int result;
             int cnt = 1;
             bool cFlag = true;

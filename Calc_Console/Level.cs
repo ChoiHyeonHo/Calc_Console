@@ -15,17 +15,13 @@ namespace Calc_Console
             Console.WriteLine("=========================================");
         }
 
-        public void HighLevel()
+        public void HighLevel() //난이도 상 메서드
         {
             Logic logic = new Logic();
             while (true)
             {
-                float win = 0, lose = 0;
-                logic.HLevelLogic(ref win, ref lose);
-                Console.WriteLine("=============================================");
-                Console.WriteLine($"총 문제 수: {win + lose} \t 정답 수: {win} \t 오답 수:{lose}");
-                Console.WriteLine($"정답률: {win / (win + lose) * 100}%");
-                Console.WriteLine("=============================================");
+                float win, lose;
+                WinningRate(logic, out win, out lose); //승률 메서드 호출
                 try
                 {
                     if ((win / (win + lose) * 100) >= 80)
@@ -59,7 +55,8 @@ namespace Calc_Console
                 }
             }
         }
-        public void MiddleLevel()
+
+        public void MiddleLevel() //난이도 중 메서드
         {
             Logic logic = new Logic();
             while (true)
@@ -103,7 +100,7 @@ namespace Calc_Console
                 }
             }
         }
-        public void LowLevel()
+        public void LowLevel() //난이도 하 메서드
         {
             Logic logic = new Logic();
             while (true)
@@ -155,18 +152,17 @@ namespace Calc_Console
                 {
                     throw;
                 }
-                //Console.WriteLine("다시 하시겠습니까? (1. 예\t2. 아니오)");
-                //int reTry = int.Parse(Console.ReadLine());
-                //if (reTry == 1)
-                //{
-                //    continue;
-                //}
-                //else if (reTry == 2)
-                //{
-                //    Console.WriteLine("처음 메뉴로 돌아갑니다.");
-                //    break;
-                //}
             }
+        }
+        private void WinningRate(Logic logic, out float win, out float lose) //승률 메서드
+        {
+            win = 0;
+            lose = 0;
+            logic.HLevelLogic(ref win, ref lose);
+            Console.WriteLine("=============================================");
+            Console.WriteLine($"총 문제 수: {win + lose} \t 정답 수: {win} \t 오답 수:{lose}");
+            Console.WriteLine($"정답률: {win / (win + lose) * 100}%");
+            Console.WriteLine("=============================================");
         }
     }
 }
